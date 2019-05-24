@@ -1,0 +1,13 @@
+clients:
+  pokemon:
+    endpoint: https://pokeapi.co/api/v2
+
+logging:
+  level:
+    br.community.javaclean.gateways.feign.PokemonClient: DEBUG
+
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: FULL

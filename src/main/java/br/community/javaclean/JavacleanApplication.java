@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class JavacleanApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(JavacleanApplication.class, args);
-	}
-
+  public static void main(String[] args) {
+    SpringApplication.run(JavacleanApplication.class, args);
+  }
 }
