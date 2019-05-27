@@ -1,1 +1,2 @@
 language: java
+install: "mvn clean install -DskipTests=false -Dmaven.javadoc.skip=true -B -V -f app/pom.xml"
