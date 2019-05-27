@@ -166,24 +166,24 @@
                         <goals>
                             <goal>check</goal>
                         </goals>
-                        <configuration>
-                            <rules>
-                                <rule>
-                                    <element>CLASS</element>
-                                    <excludes>
-                                        <exclude>**.*domains.**</exclude>
-                                        <exclude>**.*jsons.**</exclude>
-                                    </excludes>
-                                    <limits>
-                                        <limit>
-                                            <counter>LINE</counter>
-                                            <value>COVEREDRATIO</value>
-                                            <minimum>1.00</minimum>
-                                        </limit>
-                                    </limits>
-                                </rule>
-                            </rules>
-                        </configuration>
+                        <!--<configuration>-->
+                            <!--<rules>-->
+                                <!--<rule>-->
+                                    <!--<element>CLASS</element>-->
+                                    <!--<excludes>-->
+                                        <!--<exclude>**.*domains.**</exclude>-->
+                                        <!--<exclude>**.*jsons.**</exclude>-->
+                                    <!--</excludes>-->
+                                    <!--<limits>-->
+                                        <!--<limit>-->
+                                            <!--<counter>LINE</counter>-->
+                                            <!--<value>COVEREDRATIO</value>-->
+                                            <!--<minimum>1.00</minimum>-->
+                                        <!--</limit>-->
+                                    <!--</limits>-->
+                                <!--</rule>-->
+                            <!--</rules>-->
+                        <!--</configuration>-->
                     </execution>
                     <execution>
                         <id>post-unit-test</id>
