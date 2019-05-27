@@ -1,0 +1,8 @@
+- request:
+    url: /pokemon/*
+    method: GET
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    file: pokeapi_pokemon_response.json

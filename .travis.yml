@@ -1,2 +1,3 @@
 language: java
-install: "mvn clean install -DskipTests=false -Dmaven.javadoc.skip=true -B -V -f app/pom.xml"
+install: "mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V -f app/pom.xml"
+script: "mvn test -B -f app/pom.xml"
