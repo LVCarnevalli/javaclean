@@ -161,11 +161,11 @@
                             <propertyName>jacocoArgLine</propertyName>
                         </configuration>
                     </execution>
-                    <execution>
-                        <id>jacoco-check</id>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
+                    <!--<execution>-->
+                        <!--<id>jacoco-check</id>-->
+                        <!--<goals>-->
+                            <!--<goal>check</goal>-->
+                        <!--</goals>-->
                         <!--<configuration>-->
                             <!--<rules>-->
                                 <!--<rule>-->
@@ -184,7 +184,7 @@
                                 <!--</rule>-->
                             <!--</rules>-->
                         <!--</configuration>-->
-                    </execution>
+                    <!--</execution>-->
                     <execution>
                         <id>post-unit-test</id>
                         <phase>test</phase>
