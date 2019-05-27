@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.community.javaclean.domains.Pokemon;
 import br.community.javaclean.domains.exceptions.JavaCleanException;
+import br.community.javaclean.domains.logs.LogKey;
 import br.community.javaclean.gateways.http.assembler.PokemonToPokemonResponseAssembler;
 import br.community.javaclean.gateways.http.jsons.ErrorResponse;
 import br.community.javaclean.gateways.http.jsons.pokemon.PokemonResponse;
@@ -22,7 +23,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import javassist.NotFoundException;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/v1/pokemon")
 @Api(value = "/api/v1/pokemon", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -44,11 +47,16 @@ public class PokemonController {
   public PokemonResponse detail(
       @ApiParam(value = "Id of pokemon", required = true) @NotNull @PathVariable Integer id,
       @ApiParam(value = "Name of pokemon", required = true) @NotNull @PathVariable String name) {
+    log.warn(
+        "Get detail pokemon with id {} and name {}",
+        LogKey.value(LogKey.POKEMON_ID, id),
+        LogKey.value(LogKey.POKEMON_NAME, name));
 
     Pokemon pokemon;
     try {
       pokemon = detailPokemon.execute(id, name);
     } catch (NotFoundException exception) {
+      log.warn("Pokemon not found");
       throw new JavaCleanException(HttpStatus.NOT_FOUND, ErrorResponse.build(POKEMON_NOT_FOUND));
     }
     return pokemonToPokemonResponseAssembler.assemble(pokemon);
