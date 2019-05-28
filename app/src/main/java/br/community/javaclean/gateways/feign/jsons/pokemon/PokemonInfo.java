@@ -23,17 +23,17 @@ public class PokemonInfo {
 
   private List<LinkInfo> forms;
 
-  @JsonProperty("gameIndices")
-  private List<GameIndexInfo> game_indices;
+  @JsonProperty("game_indices")
+  private List<GameIndexInfo> gameIndices;
 
   private Integer height;
   private Integer id;
 
-  @JsonProperty("isDefault")
-  private Boolean is_default;
+  @JsonProperty("is_default")
+  private Boolean isDefault;
 
-  @JsonProperty("locationAreaEncounters")
-  private String location_area_encounters;
+  @JsonProperty("location_area_encounters")
+  private String locationAreaEncounters;
 
   private String name;
   private Integer order;
