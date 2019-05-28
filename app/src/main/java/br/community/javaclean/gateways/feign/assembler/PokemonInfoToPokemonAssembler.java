@@ -6,6 +6,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.EnumUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 
 import br.community.javaclean.domains.Pokemon;
@@ -41,7 +42,8 @@ public class PokemonInfoToPokemonAssembler {
 
   private Ability assembleAbilitiesLinkInfo(AbilityInfo abilityInfo) {
     return Optional.ofNullable(abilityInfo.getAbility())
-        .map(linkInfo -> EnumUtils.getEnum(Ability.class, linkInfo.getName()))
+        .map(
+            linkInfo -> EnumUtils.getEnum(Ability.class, StringUtils.upperCase(linkInfo.getName())))
         .orElse(null);
   }
 }
