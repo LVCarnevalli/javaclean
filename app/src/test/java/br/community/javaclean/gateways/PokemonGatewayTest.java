@@ -2,6 +2,7 @@ package br.community.javaclean.gateways;
 
 import static org.hamcrest.CoreMatchers.equalToObject;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.anyString;
 import static org.mockito.Mockito.never;
@@ -9,7 +10,6 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -42,14 +42,10 @@ class PokemonGatewayTest extends UnitTest {
 
   @Test
   void shouldThrowErrorInClient(@Random String name) {
-    Assertions.assertThrows(
-        RuntimeException.class,
-        () -> {
-          when(pokemonClient.detail(anyString())).thenThrow(new RuntimeException());
+    when(pokemonClient.detail(anyString())).thenThrow(new RuntimeException());
 
-          pokemonGateway.detail(name);
+    assertThrows(RuntimeException.class, () -> pokemonGateway.detail(name));
 
-          verify(pokemonInfoToPokemonAssembler, never()).assemble(any(PokemonInfo.class));
-        });
+    verify(pokemonInfoToPokemonAssembler, never()).assemble(any(PokemonInfo.class));
   }
 }

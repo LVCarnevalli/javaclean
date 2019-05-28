@@ -71,13 +71,10 @@ class PokemonControllerTest extends HTTPIntegrationTest {
     JavaCleanException thrown =
         assertThrows(
             JavaCleanException.class,
-            () -> {
-              mockMvc.perform(get("/api/v1/pokemon/1/ditto")).andReturn();
+            () -> mockMvc.perform(get("/api/v1/pokemon/1/ditto")).andReturn());
 
-              verify(detailPokemon, times(1)).execute(anyInt(), anyString());
-              verify(pokemonToPokemonResponseAssembler, never()).assemble(any(Pokemon.class));
-            });
-
+    verify(detailPokemon, times(1)).execute(anyInt(), anyString());
+    verify(pokemonToPokemonResponseAssembler, never()).assemble(any(Pokemon.class));
     assertThat(thrown.getHttpStatus(), equalTo(HttpStatus.NOT_FOUND));
     assertThat(thrown.getErrorResponse().getMessage(), equalTo(ErrorResponse.POKEMON_NOT_FOUND));
   }
