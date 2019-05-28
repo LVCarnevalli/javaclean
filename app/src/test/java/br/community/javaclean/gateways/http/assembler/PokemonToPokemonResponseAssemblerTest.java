@@ -9,7 +9,7 @@ import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 
-import br.community.javaclean.conf.UnitTest;
+import br.community.javaclean.confs.UnitTest;
 import br.community.javaclean.domains.Pokemon;
 import br.community.javaclean.domains.enums.Ability;
 import br.community.javaclean.gateways.http.jsons.pokemon.PokemonResponse;

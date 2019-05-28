@@ -1,5 +1,7 @@
 package br.community.javaclean.gateways.feign.jsons.pokemon;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,6 +15,9 @@ import lombok.NoArgsConstructor;
 public class AbilityInfo {
 
   private LinkInfo ability;
-  private Boolean is_hidden;
+
+  @JsonProperty("is_hidden")
+  private Boolean isHidden;
+
   private Integer slot;
 }

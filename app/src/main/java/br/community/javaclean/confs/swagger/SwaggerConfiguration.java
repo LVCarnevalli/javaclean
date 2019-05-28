@@ -1,4 +1,4 @@
-package br.community.javaclean.conf.swagger;
+package br.community.javaclean.confs.swagger;
 
 import static springfox.documentation.builders.PathSelectors.regex;
 

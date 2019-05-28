@@ -8,13 +8,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import br.community.javaclean.conf.HTTPIntegrationTest;
+import br.community.javaclean.confs.HTTPUnitTest;
 import br.community.javaclean.gateways.http.jsons.ErrorResponse;
 
-class CustomExceptionHandlerTest extends HTTPIntegrationTest {
+class CustomExceptionHandlerTest extends HTTPUnitTest {
 
   private MockMvc mockMvc =
-      MockMvcBuilders.standaloneSetup(new CustomExceptionHandlerControllerTest())
+      MockMvcBuilders.standaloneSetup(new CustomExceptionHandlerTestController())
           .setControllerAdvice(new CustomExceptionHandler())
           .build();
 
@@ -40,5 +40,21 @@ class CustomExceptionHandlerTest extends HTTPIntegrationTest {
         .perform(get("/shouldThrowException"))
         .andExpect(status().isInternalServerError())
         .andExpect(jsonPath("$.message").value(ErrorResponse.INTERNAL_SERVER_ERROR));
+  }
+
+  @Test
+  void shouldThrowValidationException() throws Exception {
+    mockMvc
+        .perform(get("/shouldThrowValidationException"))
+        .andExpect(status().isBadRequest())
+        .andExpect(jsonPath("$.message").value(ErrorResponse.BAD_REQUEST));
+  }
+
+  @Test
+  void shouldThrowConstraintViolationException() throws Exception {
+    mockMvc
+        .perform(get("/shouldThrowConstraintViolationException"))
+        .andExpect(status().isBadRequest())
+        .andExpect(jsonPath("$.message").value(ErrorResponse.BAD_REQUEST));
   }
 }

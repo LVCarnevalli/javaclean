@@ -22,7 +22,7 @@ public class PokemonInfoToPokemonAssembler {
         .id(data.getId())
         .name(data.getName())
         .abilities(assembleAbilities(data))
-        .baseExperience(data.getBase_experience())
+        .baseExperience(data.getBaseExperience())
         .weight(data.getWeight())
         .height(data.getHeight())
         .build();

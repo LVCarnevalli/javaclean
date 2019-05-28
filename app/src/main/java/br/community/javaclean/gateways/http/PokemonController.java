@@ -2,11 +2,16 @@ package br.community.javaclean.gateways.http;
 
 import static br.community.javaclean.gateways.http.jsons.ErrorResponse.POKEMON_NOT_FOUND;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +34,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping("/api/v1/pokemon")
 @Api(value = "/api/v1/pokemon", produces = MediaType.APPLICATION_JSON_VALUE)
+@Validated
 public class PokemonController {
 
   private final DetailPokemon detailPokemon;
@@ -45,8 +51,14 @@ public class PokemonController {
   @ApiOperation(value = "Detail pokemon")
   @GetMapping("/{id}/{name}")
   public PokemonResponse detail(
-      @ApiParam(value = "Id of pokemon", required = true) @NotNull @PathVariable Integer id,
-      @ApiParam(value = "Name of pokemon", required = true) @NotNull @PathVariable String name) {
+      @ApiParam(value = "Id of pokemon", required = true) @PathVariable @Max(999) @NotNull
+          Integer id,
+      @ApiParam(value = "Name of pokemon", required = true)
+          @PathVariable
+          @Size(max = 20)
+          @Pattern(regexp = "^[A-Za-z]*$")
+          @NotBlank
+          String name) {
     log.warn(
         "Get detail pokemon with id {} and name {}",
         LogKey.value(LogKey.POKEMON_ID, id),

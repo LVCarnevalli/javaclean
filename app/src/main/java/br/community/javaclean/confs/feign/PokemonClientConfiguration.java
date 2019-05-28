@@ -1,4 +1,4 @@
-package br.community.javaclean.gateways.feign;
+package br.community.javaclean.confs.feign;
 
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package br.community.javaclean.conf;
+package br.community.javaclean.confs;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -6,14 +6,14 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.loader.FixtureFactoryLoader;
-import br.community.javaclean.conf.fixtures.FixtureJson;
+import br.community.javaclean.confs.fixtures.FixtureJson;
 import io.github.glytching.junit.extension.random.RandomBeansExtension;
 
 @ExtendWith({MockitoExtension.class, RandomBeansExtension.class})
 public abstract class UnitTest {
 
   @BeforeAll
-  public static void setup() {
+  static void setup() {
     FixtureFactoryLoader.loadTemplates("br.community.javaclean.templates");
   }
 

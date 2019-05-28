@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
-import br.community.javaclean.conf.UnitTest;
+import br.community.javaclean.confs.UnitTest;
 import br.community.javaclean.domains.Pokemon;
 import br.community.javaclean.gateways.feign.PokemonClient;
 import br.community.javaclean.gateways.feign.assembler.PokemonInfoToPokemonAssembler;

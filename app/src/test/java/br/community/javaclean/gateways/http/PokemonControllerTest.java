@@ -23,7 +23,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import br.community.javaclean.conf.HTTPIntegrationTest;
+import br.community.javaclean.confs.HTTPUnitTest;
 import br.community.javaclean.domains.Pokemon;
 import br.community.javaclean.domains.exceptions.JavaCleanException;
 import br.community.javaclean.gateways.http.assembler.PokemonToPokemonResponseAssembler;
@@ -33,7 +33,7 @@ import br.community.javaclean.usecases.DetailPokemon;
 import io.github.glytching.junit.extension.random.Random;
 import javassist.NotFoundException;
 
-class PokemonControllerTest extends HTTPIntegrationTest {
+class PokemonControllerTest extends HTTPUnitTest {
 
   @Mock private DetailPokemon detailPokemon;
   @Mock private PokemonToPokemonResponseAssembler pokemonToPokemonResponseAssembler;

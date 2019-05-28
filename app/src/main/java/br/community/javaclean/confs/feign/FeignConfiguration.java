@@ -1,4 +1,4 @@
-package br.community.javaclean.conf.feign;
+package br.community.javaclean.confs.feign;
 
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Configuration;

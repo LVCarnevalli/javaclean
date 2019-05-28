@@ -1,4 +1,4 @@
-package br.community.javaclean.conf.fixtures;
+package br.community.javaclean.confs.fixtures;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,6 +27,7 @@ public abstract class TemplateJsonLoader implements TemplateLoader {
     }
   }
 
+  @Override
   public abstract void load();
 
   public <T> T json(String name, Class<T> valueType) {

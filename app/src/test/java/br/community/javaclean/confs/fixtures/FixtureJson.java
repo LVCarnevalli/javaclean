@@ -1,4 +1,4 @@
-package br.community.javaclean.conf.fixtures;
+package br.community.javaclean.confs.fixtures;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
