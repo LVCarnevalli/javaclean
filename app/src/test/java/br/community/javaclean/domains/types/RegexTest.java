@@ -24,6 +24,7 @@ class RegexTest extends UnitTest {
 
     assertThat(
         Arrays.stream(Regex.class.getDeclaredFields())
+            .filter(field -> field.getType().equals(String.class))
             .map(Field::getName)
             .collect(Collectors.toList()),
         equalTo(expected));
