@@ -5,7 +5,7 @@ addons:
 install: 
   - mvn clean install -Dmaven.javadoc.skip=true -B -V -f app/pom.xml
 script: 	
-  - mvn gatling:test -B -f performance-test/pom.xml
+  - mvn clean verify -B -f performance-test/pom.xml
 after_success:
   - mvn sonar:sonar -B -f app/pom.xml
   - mvn sonar:sonar -B -f performance-test/pom.xml
