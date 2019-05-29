@@ -8,4 +8,3 @@ script:
   - mvn clean verify -B -f performance-test/pom.xml
 after_success:
   - mvn sonar:sonar -B -f app/pom.xml
-  - mvn sonar:sonar -B -f performance-test/pom.xml
