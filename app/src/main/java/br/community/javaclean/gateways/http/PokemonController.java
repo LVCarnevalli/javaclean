@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.community.javaclean.domains.Pokemon;
-import br.community.javaclean.domains.types.Regex;
 import br.community.javaclean.domains.exceptions.JavaCleanException;
 import br.community.javaclean.domains.logs.LogKey;
+import br.community.javaclean.domains.types.Regex;
 import br.community.javaclean.gateways.http.assembler.PokemonToPokemonResponseAssembler;
 import br.community.javaclean.gateways.http.jsons.ErrorResponse;
 import br.community.javaclean.gateways.http.jsons.pokemon.PokemonResponse;
