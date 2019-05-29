@@ -40,7 +40,7 @@
                 <executions>
                     <execution>
                         <id>up</id>
-                        <phase>test</phase>
+                        <phase>process-resources</phase>
                         <goals>
                             <goal>up</goal>
                         </goals>
@@ -78,7 +78,7 @@
                 <executions>
                     <execution>
                         <id>gatlingWarmUp</id>
-                        <phase>test</phase>
+                        <phase>test-compile</phase>
                         <goals>
                             <goal>test</goal>
                         </goals>
