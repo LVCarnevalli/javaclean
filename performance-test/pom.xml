@@ -15,6 +15,10 @@
         <scala.maven.plugin.version>4.0.2</scala.maven.plugin.version>
         <gatling.plugin.version>3.0.2</gatling.plugin.version>
         <gatling.version>3.1.2</gatling.version>
+        <docker.compose.version>2.4.0</docker.compose.version>
+
+        <skip.integration.tests>true</skip.integration.tests>
+        <skipTests>true</skipTests>
     </properties>
 
     <dependencies>
@@ -30,6 +34,35 @@
         <finalName>javaclean-performance-test</finalName>
         <plugins>
             <plugin>
+                <groupId>com.dkanejs.maven.plugins</groupId>
+                <artifactId>docker-compose-maven-plugin</artifactId>
+                <version>${docker.compose.version}</version>
+                <executions>
+                    <execution>
+                        <id>up</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>up</goal>
+                        </goals>
+                        <configuration>
+                            <composeFile>${project.basedir}/docker-compose.yml</composeFile>
+                            <detachedMode>true</detachedMode>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>down</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>down</goal>
+                        </goals>
+                        <configuration>
+                            <composeFile>${project.basedir}/docker-compose.yml</composeFile>
+                            <removeVolumes>true</removeVolumes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
                 <version>${scala.maven.plugin.version}</version>
@@ -40,7 +73,39 @@
                 <version>${gatling.plugin.version}</version>
                 <configuration>
                     <runMultipleSimulations>true</runMultipleSimulations>
+                    <failOnError>false</failOnError>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>gatlingWarmUp</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <configuration>
+                            <simulationClass>br.community.javaclean.simulations.WarmUpSimulation</simulationClass>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>gatlingTest</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <configuration>
+                            <excludes>
+                                <param>br.community.javaclean.simulations.WarmUpSimulation</param>
+                            </excludes>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>gatlingVerify</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
