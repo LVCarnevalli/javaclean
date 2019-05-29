@@ -2,7 +2,7 @@ package br.community.javaclean.domains;
 
 import java.util.List;
 
-import br.community.javaclean.domains.enums.Ability;
+import br.community.javaclean.domains.types.Ability;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -11,7 +11,7 @@ import org.mockito.InjectMocks;
 
 import br.community.javaclean.confs.UnitTest;
 import br.community.javaclean.domains.Pokemon;
-import br.community.javaclean.domains.enums.Ability;
+import br.community.javaclean.domains.types.Ability;
 import br.community.javaclean.gateways.feign.jsons.pokemon.PokemonInfo;
 
 class PokemonInfoToPokemonAssemblerTest extends UnitTest {

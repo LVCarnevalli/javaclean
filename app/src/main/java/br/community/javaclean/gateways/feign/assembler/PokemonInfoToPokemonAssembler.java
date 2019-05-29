@@ -10,7 +10,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 
 import br.community.javaclean.domains.Pokemon;
-import br.community.javaclean.domains.enums.Ability;
+import br.community.javaclean.domains.types.Ability;
 import br.community.javaclean.gateways.feign.jsons.pokemon.AbilityInfo;
 import br.community.javaclean.gateways.feign.jsons.pokemon.PokemonInfo;
 

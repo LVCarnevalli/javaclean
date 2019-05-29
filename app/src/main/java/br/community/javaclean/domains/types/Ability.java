@@ -1,4 +1,4 @@
-package br.community.javaclean.domains.enums;
+package br.community.javaclean.domains.types;
 
 public enum Ability {
   CHLOROPHYLL,

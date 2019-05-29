@@ -2,7 +2,7 @@ package br.community.javaclean.gateways.http.jsons.pokemon;
 
 import java.util.List;
 
-import br.community.javaclean.domains.enums.Ability;
+import br.community.javaclean.domains.types.Ability;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AccessLevel;

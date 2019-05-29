@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.community.javaclean.domains.Pokemon;
+import br.community.javaclean.domains.types.Regex;
 import br.community.javaclean.domains.exceptions.JavaCleanException;
 import br.community.javaclean.domains.logs.LogKey;
 import br.community.javaclean.gateways.http.assembler.PokemonToPokemonResponseAssembler;
@@ -56,7 +57,7 @@ public class PokemonController {
       @ApiParam(value = "Name of pokemon", required = true)
           @PathVariable
           @Size(max = 20)
-          @Pattern(regexp = "^[A-Za-z]*$")
+          @Pattern(regexp = Regex.ALPHA)
           @NotBlank
           String name) {
     log.warn(

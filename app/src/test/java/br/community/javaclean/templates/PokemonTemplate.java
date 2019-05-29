@@ -6,7 +6,7 @@ import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.Rule;
 import br.community.javaclean.confs.fixtures.TemplateJsonLoader;
 import br.community.javaclean.domains.Pokemon;
-import br.community.javaclean.domains.enums.Ability;
+import br.community.javaclean.domains.types.Ability;
 
 public class PokemonTemplate extends TemplateJsonLoader {
 
