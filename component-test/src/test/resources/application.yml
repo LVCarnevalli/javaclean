@@ -1,0 +1,2 @@
+target.url: http://localhost:8080
+dependencies.stubby.url: http://localhost:9001

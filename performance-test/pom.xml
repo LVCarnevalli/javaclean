@@ -56,7 +56,6 @@
                         </goals>
                         <configuration>
                             <composeFile>${project.basedir}/docker-compose.yml</composeFile>
-                            <removeVolumes>true</removeVolumes>
                         </configuration>
                     </execution>
                 </executions>
