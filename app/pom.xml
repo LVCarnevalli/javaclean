@@ -246,7 +246,6 @@
 
     <build>
         <finalName>javaclean</finalName>
-        <testSourceDirectory>${project.basedir}/src/test/groovy</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
