@@ -4,9 +4,9 @@ JAVA Clean
 
 Estrutura de projeto JAVA abrangendo implementação do clean architecture, features toggles e toda pirâmide de testes.
 
-<h1 align="center">
+<p align="center">
   <img src="https://github.com/LVCarnevalli/javaclean/blob/master/explanation.jpg?raw=true" width="800 "align="center" />
-</h1>
+</p>
 
 ## Conteúdo
 
