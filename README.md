@@ -67,9 +67,9 @@ mvn spring-boot:run -f app/pom.xml
 Por padrão a aplicação sobe na porta 8080, para acessar o Swagger acesse [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html).
 #### Executar testes de componente, performance ou segurança
 ```shell
-mvn clean test -f component-test/pom.xml
-mvn clean test -f performance-test/pom.xml
-mvn clean test -f security-test/pom.xml
+mvn clean verify -f component-test/pom.xml
+mvn clean verify -f performance-test/pom.xml
+mvn clean verify -f security-test/pom.xml
 ```
 Os testes são executados através do docker-compose, enquanto os testes estão rodando o docker é iniciado e ao término da execução o docker é desligado.
 
