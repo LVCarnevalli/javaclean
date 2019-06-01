@@ -20,5 +20,5 @@ services:
     environment:
     - "SERVER_PORT:8080"
     - "clients_pokemon_endpoint=http://mocks:9001"
-    - "ff4j_redis_server=localhost"
+    - "ff4j_redis_server=redis"
     - "ff4j_redis_port=6379"
