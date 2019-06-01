@@ -26,12 +26,12 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import br.community.javaclean.confs.HTTPUnitTest;
 import br.community.javaclean.domains.Pokemon;
 import br.community.javaclean.domains.exceptions.JavaCleanException;
+import br.community.javaclean.domains.exceptions.NotFoundException;
 import br.community.javaclean.gateways.http.assembler.PokemonToPokemonResponseAssembler;
 import br.community.javaclean.gateways.http.jsons.ErrorResponse;
 import br.community.javaclean.gateways.http.jsons.pokemon.PokemonResponse;
 import br.community.javaclean.usecases.DetailPokemon;
 import io.github.glytching.junit.extension.random.Random;
-import javassist.NotFoundException;
 
 class PokemonControllerTest extends HTTPUnitTest {
 

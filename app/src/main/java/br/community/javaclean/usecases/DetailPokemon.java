@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import br.community.javaclean.domains.Pokemon;
+import br.community.javaclean.domains.exceptions.NotFoundException;
 import br.community.javaclean.gateways.PokemonGateway;
-import javassist.NotFoundException;
 
 @Component
 public class DetailPokemon {

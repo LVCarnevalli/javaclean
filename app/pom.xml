@@ -37,6 +37,7 @@
         <hibernate.validator.version>6.0.16.Final</hibernate.validator.version>
 
         <sonar.exclusions>**/confs/**,**/domains/**,**/jsons/**,**/*Application*</sonar.exclusions>
+        <thymeleaf.version>2.1.4.RELEASE</thymeleaf.version>
     </properties>
 
     <dependencyManagement>
@@ -107,7 +108,7 @@
         </dependency>
         <dependency>
             <groupId>org.ff4j</groupId>
-            <artifactId>ff4j-core</artifactId>
+            <artifactId>ff4j-store-redis</artifactId>
             <version>${ff4j.version}</version>
         </dependency>
         <dependency>
@@ -117,13 +118,13 @@
         </dependency>
         <dependency>
             <groupId>org.ff4j</groupId>
-            <artifactId>ff4j-aop</artifactId>
+            <artifactId>ff4j-spring-boot-starter</artifactId>
             <version>${ff4j.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.ff4j</groupId>
-            <artifactId>ff4j-store-redis</artifactId>
-            <version>${ff4j.version}</version>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf</artifactId>
+            <version>${thymeleaf.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>

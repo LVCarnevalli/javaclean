@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.community.javaclean.domains.Pokemon;
 import br.community.javaclean.domains.exceptions.JavaCleanException;
+import br.community.javaclean.domains.exceptions.NotFoundException;
 import br.community.javaclean.domains.logs.LogKey;
 import br.community.javaclean.domains.types.Regex;
 import br.community.javaclean.gateways.http.assembler.PokemonToPokemonResponseAssembler;
@@ -28,7 +29,6 @@ import br.community.javaclean.usecases.DetailPokemon;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import javassist.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

@@ -1,8 +1,8 @@
 package br.community.javaclean.usecases
 
 import br.community.javaclean.domains.Pokemon
+import br.community.javaclean.domains.exceptions.NotFoundException
 import br.community.javaclean.gateways.PokemonGateway
-import javassist.NotFoundException
 import org.jeasy.random.EasyRandom
 import spock.lang.Specification
 

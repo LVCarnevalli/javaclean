@@ -7,8 +7,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-public class JavacleanApplicationTests {
+public class JavacleanApplicationTest {
 
   @Test
-  void contextLoads() {}
+  void shouldLoadContext() {}
 }
