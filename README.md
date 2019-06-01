@@ -3,7 +3,7 @@ JAVA Clean
 [![Build Status](https://travis-ci.org/LVCarnevalli/javaclean.svg?branch=master)](https://travis-ci.org/LVCarnevalli/javaclean) [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=br.community:javaclean&metric=alert_status)](https://sonarcloud.io/dashboard?id=br.community:javaclean) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=br.community%3Ajavaclean&metric=coverage)](https://sonarcloud.io/dashboard?id=br.community%3Ajavaclean)
 
 
-Estrutura de projeto Java abrangendo implementação do clean architecture, features toggles e toda pirâmide de testes.
+Estrutura de projeto JAVA abrangendo implementação do clean architecture, features toggles e toda pirâmide de testes.
 
 <h1 align="center">
   <img src="https://github.com/LVCarnevalli/javaclean/blob/master/explanation.jpg?raw=true" width="800 "align="center" />
@@ -33,7 +33,7 @@ A pirâmide de testes implementada nesse projeto têm como referência o documen
 
 **Performance**: Teste que valida a performance da aplicação como um todo, mockando todas as depedências. Se algo aumentar o tempo de resposta é uma camada que pegaria o problema, esse teste não têm como objetivo validar a performance da integração.
 
-**Segurança**: Teste que vai verificar falhas de segurança que podem ser exploradas através do contrato da API. Em alguns casos pode até ser considerado um teste de contrato pois o contrato será validado de diversas formas nesse teste.
+**Segurança**: Teste que vai verificar falhas de segurança que podem ser exploradas através do contrato da API. Em alguns casos pode até ser considerado um teste de contrato pois o contrato da API será validado de diversas formas nesse teste.
 
 Os testes de E2E não se aplica a esse projeto, mais pra frente pretendemos colocar um exemplo de uma aplicação frontend integrando com o serviço, e todo o fluxo testado com o E2E. Esse projeto têm como objetivo mostrar os testes sendo executados de maneira isoladas em uma aplicação.
 
