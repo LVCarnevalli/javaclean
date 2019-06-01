@@ -5,21 +5,23 @@ JAVA Clean
 
 Estrutura de projeto JAVA abrangendo implementação do clean architecture, features toggles e toda pirâmide de testes.
 
-<h1 align="center">
-  <img src="https://github.com/LVCarnevalli/javaclean/blob/master/explanation.jpg?raw=true" width="800 "align="center" />
-</h1>
+<img src="https://github.com/LVCarnevalli/javaclean/blob/master/explanation.jpg?raw=true" width="800 "align="center" />
 
 ## Conteúdo
 
-- [Referência]()
-- [Tecnologias]()
-- [Pré-requisitos]()
-- [Como utilizar]()
-- [Atenção]()
-- [Créditos]()
-- [Licença]()
+- [Referência](https://github.com/LVCarnevalli/javaclean/blob/master/README.md#refer%C3%AAncia)
+- [Tecnologias](https://github.com/LVCarnevalli/javaclean/blob/master/README.md#tecnologias)
+- [Pré-requisitos](https://github.com/LVCarnevalli/javaclean/blob/master/README.md#pr%C3%A9-requisitos)
+- [Como utilizar](https://github.com/LVCarnevalli/javaclean/blob/master/README.md#como-utilizar)
+- [Atenção](https://github.com/LVCarnevalli/javaclean/blob/master/README.md#aten%C3%A7%C3%A3o)
+- [Créditos](https://github.com/LVCarnevalli/javaclean/blob/master/README.md#cr%C3%A9ditos)
+- [Licença](https://github.com/LVCarnevalli/javaclean/blob/master/README.md#licen%C3%A7a)
 
 ## Referência
+
+<h1 align="center">
+  <img src="https://github.com/LVCarnevalli/javaclean/blob/master/pyramidtest.jpg?raw=true" width="300 "align="center" />
+</h1>
 
 O projeto JAVA Clean têm como objetivo demonstrar como é simples trabalhar com toggles, clean architecture (não o by the book) e testes possibilitando o trunk based development.
 
