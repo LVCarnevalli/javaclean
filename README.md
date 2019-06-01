@@ -2,10 +2,11 @@ JAVA Clean
 ======================
 [![Build Status](https://travis-ci.org/LVCarnevalli/javaclean.svg?branch=master)](https://travis-ci.org/LVCarnevalli/javaclean) [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=br.community:javaclean&metric=alert_status)](https://sonarcloud.io/dashboard?id=br.community:javaclean) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=br.community%3Ajavaclean&metric=coverage)](https://sonarcloud.io/dashboard?id=br.community%3Ajavaclean)
 
-
 Estrutura de projeto JAVA abrangendo implementação do clean architecture, features toggles e toda pirâmide de testes.
 
-<img src="https://github.com/LVCarnevalli/javaclean/blob/master/explanation.jpg?raw=true" width="800 "align="center" />
+<h1 align="center">
+  <img src="https://github.com/LVCarnevalli/javaclean/blob/master/explanation.jpg?raw=true" width="800 "align="center" />
+</h1>
 
 ## Conteúdo
 
@@ -19,9 +20,9 @@ Estrutura de projeto JAVA abrangendo implementação do clean architecture, feat
 
 ## Referência
 
-<h1 align="center">
-  <img src="https://github.com/LVCarnevalli/javaclean/blob/master/pyramidtest.jpg?raw=true" width="300 "align="center" />
-</h1>
+<spam>
+  <img src="https://github.com/LVCarnevalli/javaclean/blob/master/pyramidtest.jpg?raw=true" width="400 "align="center" />
+</spam>
 
 O projeto JAVA Clean têm como objetivo demonstrar como é simples trabalhar com toggles, clean architecture (não o by the book) e testes possibilitando o trunk based development.
 
