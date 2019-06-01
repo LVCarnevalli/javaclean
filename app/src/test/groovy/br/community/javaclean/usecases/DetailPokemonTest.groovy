@@ -15,6 +15,8 @@ class DetailPokemonTest extends Specification {
         given:
         String name = "ditto"
         Pokemon pokemon = new EasyRandom().nextObject(Pokemon.class)
+        and:
+        detailPokemon.@isDetailPokemon = true
 
         when:
         Pokemon detail = detailPokemon.execute(pokemon.id, name)
@@ -28,6 +30,8 @@ class DetailPokemonTest extends Specification {
     def "Should not found pokemon"() {
         given:
         Pokemon pokemon = new EasyRandom().nextObject(Pokemon.class)
+        and:
+        detailPokemon.@isDetailPokemon = true
 
         when:
         detailPokemon.execute(pokemon.id + 1, "ditto")
@@ -35,16 +39,38 @@ class DetailPokemonTest extends Specification {
         then:
         1 * pokemonGateway.detail(_) >> pokemon
         and:
-        thrown(NotFoundException.class)
+        Throwable exception = thrown()
+        exception.class == NotFoundException.class
+        exception.message == "Pokemon not found"
     }
 
     def "Should pokemon is invalid"() {
+        given:
+        detailPokemon.@isDetailPokemon = true
+
         when:
         detailPokemon.execute(1, "ditto")
 
         then:
         1 * pokemonGateway.detail(_) >> null
         and:
-        thrown(NotFoundException.class)
+        Throwable exception = thrown()
+        exception.class == NotFoundException.class
+        exception.message == "Pokemon not found"
+    }
+
+    def "Should detail pokemon without feature"() {
+        given:
+        detailPokemon.@isDetailPokemon = false
+
+        when:
+        detailPokemon.execute(1, "ditto")
+
+        then:
+        0 * pokemonGateway.detail(_)
+        and:
+        Throwable exception = thrown()
+        exception.class == NotFoundException.class
+        exception.message == "Feature detail pokemon not enable"
     }
 }

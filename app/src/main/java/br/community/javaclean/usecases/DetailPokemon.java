@@ -2,11 +2,13 @@ package br.community.javaclean.usecases;
 
 import java.util.Optional;
 
+import org.ff4j.spring.autowire.FF4JFeature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import br.community.javaclean.domains.Pokemon;
 import br.community.javaclean.domains.exceptions.NotFoundException;
+import br.community.javaclean.domains.types.Features;
 import br.community.javaclean.gateways.PokemonGateway;
 
 @Component
@@ -14,16 +16,24 @@ public class DetailPokemon {
 
   private final PokemonGateway pokemonGateway;
 
+  @FF4JFeature(value = Features.FEATURE_DETAIL_POKEMON)
+  protected boolean isDetailPokemon;
+
   @Autowired
   public DetailPokemon(PokemonGateway pokemonGateway) {
     this.pokemonGateway = pokemonGateway;
   }
 
-  public Pokemon execute(Integer id, String name) throws NotFoundException {
-    Pokemon pokemon = pokemonGateway.detail(name);
+  public Pokemon execute(Integer id, String name) {
+    Pokemon pokemon;
 
-    if (!Optional.ofNullable(pokemon).isPresent() || !pokemon.getId().equals(id)) {
-      throw new NotFoundException("Pokemon not found");
+    if (isDetailPokemon) {
+      pokemon = pokemonGateway.detail(name);
+      if (!Optional.ofNullable(pokemon).isPresent() || !pokemon.getId().equals(id)) {
+        throw new NotFoundException("Pokemon not found");
+      }
+    } else {
+      throw new NotFoundException("Feature detail pokemon not enable");
     }
     return pokemon;
   }

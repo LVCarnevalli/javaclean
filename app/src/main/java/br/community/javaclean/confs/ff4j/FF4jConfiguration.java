@@ -13,20 +13,23 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class FF4jConfiguration {
 
-  @Value("${ff4j.redis.server:localhost}")
+  @Value("${ff4j.redis.server:#{null}}")
   private String redisServer;
 
-  @Value("${ff4j.redis.port:6379}")
+  @Value("${ff4j.redis.port:#{null}}")
   private Integer redisPort;
 
   @Bean
   public FF4j getFF4j() {
     FF4j ff4j = new FF4j();
-    RedisConnection redisConnection = new RedisConnection(redisServer, redisPort);
 
-    ff4j.setFeatureStore(new FeatureStoreRedis(redisConnection));
-    ff4j.setPropertiesStore(new PropertyStoreRedis(redisConnection));
-    ff4j.setEventRepository(new EventRepositoryRedis(redisConnection));
+    if (redisServer != null && redisPort != null) {
+      RedisConnection redisConnection = new RedisConnection(redisServer, redisPort);
+
+      ff4j.setFeatureStore(new FeatureStoreRedis(redisConnection));
+      ff4j.setPropertiesStore(new PropertyStoreRedis(redisConnection));
+      ff4j.setEventRepository(new EventRepositoryRedis(redisConnection));
+    }
 
     ff4j.audit();
     ff4j.autoCreate();
