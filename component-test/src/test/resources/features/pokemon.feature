@@ -1,3 +1,4 @@
+@EnableFeatures
 Feature: Default
   This is default feature with default steps
 
