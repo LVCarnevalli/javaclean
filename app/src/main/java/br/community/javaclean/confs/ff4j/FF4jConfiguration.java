@@ -1,7 +1,12 @@
 package br.community.javaclean.confs.ff4j;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.ff4j.FF4j;
 import org.ff4j.conf.XmlConfig;
+import org.ff4j.core.Feature;
+import org.ff4j.property.Property;
 import org.ff4j.redis.RedisConnection;
 import org.ff4j.store.EventRepositoryRedis;
 import org.ff4j.store.FeatureStoreRedis;
@@ -32,11 +37,28 @@ public class FF4jConfiguration {
     }
 
     ff4j.audit();
-    ff4j.autoCreate();
 
     XmlConfig xmlConfig = ff4j.parseXmlConfig("ff4j-features.xml");
-    ff4j.getFeatureStore().importFeatures(xmlConfig.getFeatures().values());
-    ff4j.getPropertiesStore().importProperties(xmlConfig.getProperties().values());
+    ff4j.getFeatureStore().importFeatures(getNewFeatures(ff4j, xmlConfig));
+    ff4j.getPropertiesStore().importProperties(getNewProperties(ff4j, xmlConfig));
     return ff4j;
+  }
+
+  private List<Feature> getNewFeatures(FF4j ff4j, XmlConfig xmlConfig) {
+    return xmlConfig
+        .getFeatures()
+        .values()
+        .stream()
+        .filter(value -> !ff4j.getFeatures().containsKey(value.getUid()))
+        .collect(Collectors.toList());
+  }
+
+  private List<Property<?>> getNewProperties(FF4j ff4j, XmlConfig xmlConfig) {
+    return xmlConfig
+        .getProperties()
+        .values()
+        .stream()
+        .filter(value -> !ff4j.getProperties().containsKey(value.getName()))
+        .collect(Collectors.toList());
   }
 }

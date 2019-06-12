@@ -3,8 +3,8 @@ package br.community.javaclean.gateways;
 import static org.hamcrest.CoreMatchers.equalToObject;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.any;
-import static org.mockito.Mockito.anyString;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -16,6 +16,7 @@ import org.mockito.Mock;
 
 import br.community.javaclean.confs.UnitTest;
 import br.community.javaclean.domains.Pokemon;
+import br.community.javaclean.domains.exceptions.PokemonIntegrationException;
 import br.community.javaclean.gateways.feign.PokemonClient;
 import br.community.javaclean.gateways.feign.assembler.PokemonInfoToPokemonAssembler;
 import br.community.javaclean.gateways.feign.jsons.pokemon.PokemonInfo;
@@ -44,7 +45,7 @@ class PokemonGatewayTest extends UnitTest {
   void shouldThrowErrorInClient(@Random String name) {
     when(pokemonClient.detail(anyString())).thenThrow(new RuntimeException());
 
-    assertThrows(RuntimeException.class, () -> pokemonGateway.detail(name));
+    assertThrows(PokemonIntegrationException.class, () -> pokemonGateway.detail(name));
 
     verify(pokemonInfoToPokemonAssembler, never()).assemble(any(PokemonInfo.class));
   }
