@@ -2,9 +2,9 @@ JAVA Clean
 ======================
 [![Build Status](https://travis-ci.org/LVCarnevalli/javaclean.svg?branch=master)](https://travis-ci.org/LVCarnevalli/javaclean) [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=br.community:javaclean&metric=alert_status)](https://sonarcloud.io/dashboard?id=br.community:javaclean) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=br.community%3Ajavaclean&metric=coverage)](https://sonarcloud.io/dashboard?id=br.community%3Ajavaclean)
 
-Estrutura de projeto JAVA abrangendo implementação do clean architecture, features toggles e toda pirâmide de testes.
+Estrutura de projeto JAVA abrangendo implementação do clean architecture, features toggles e pirâmide de testes.
 Conheça também os projetos: 
->[Quick starter Cucumber Component Test](https://github.com/osvaldjr/quick-starter-cucumber-component-test)
+>[Easy Cucumber](https://github.com/osvaldjr/easy-cucumber)
 
 <p align="center">
   <img src="https://github.com/LVCarnevalli/javaclean/blob/master/explanation.jpg?raw=true" width="800 "align="center" />
@@ -69,9 +69,9 @@ mvn spring-boot:run -f app/pom.xml
 Por padrão a aplicação sobe na porta 8080, para acessar o Swagger acesse [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) e o console do FF4J acesse [http://localhost:8080/ff4j-web-console/](http://localhost:8080/ff4j-web-console/).
 #### Executar testes de componente, performance ou segurança
 ```shell
-mvn clean verify -f component-test/pom.xml
+mvn clean verify -f component-test/pom.xml (Está sendo implementado)
 mvn clean verify -f performance-test/pom.xml
-mvn clean verify -f security-test/pom.xml
+mvn clean verify -f security-test/pom.xml (Está sendo implementado)
 ```
 Os testes são executados através do docker-compose, enquanto os testes estão rodando o docker é iniciado e ao término da execução o docker é desligado.
 
