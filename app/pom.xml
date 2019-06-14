@@ -12,7 +12,8 @@
     <artifactId>javaclean</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>javaclean</name>
-    <description>Demo project for Spring Boot and Clean Architecture</description>
+    <description>JAVA Clean template clean architecture, feature toggles and test pyramid
+</description>
 
     <properties>
         <java.version>1.8</java.version>
