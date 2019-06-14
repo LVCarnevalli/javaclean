@@ -9,6 +9,6 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
     plugin = {"pretty"},
     features = {"src/test/resources/features"},
-    glue = {"br.community.component.test.stepdefinitions"},
+    glue = {"io.github.osvaldjr.stepdefinitions"},
     strict = true)
 public class RunCucumberTest {}

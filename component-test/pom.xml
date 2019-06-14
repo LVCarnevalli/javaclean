@@ -12,23 +12,23 @@
     <properties>
         <java.version>1.8</java.version>
         <docker.compose.version>2.4.0</docker.compose.version>
-        <component.test.version>0.0.1-SNAPSHOT</component.test.version>
+        <easy.cucumber.version>0.0.1</easy.cucumber.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>br.community</groupId>
-            <artifactId>component-test</artifactId>
-            <version>${component.test.version}</version>
+            <groupId>io.github.osvaldjr</groupId>
+            <artifactId>easy-cucumber</artifactId>
+            <version>${easy.cucumber.version}</version>
         </dependency>
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>br.community</groupId>
-                <artifactId>component-test</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <groupId>io.github.osvaldjr</groupId>
+                <artifactId>easy-cucumber</artifactId>
+                <version>${easy.cucumber.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
