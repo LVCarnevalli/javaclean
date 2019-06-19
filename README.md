@@ -69,7 +69,7 @@ mvn spring-boot:run -f app/pom.xml
 Por padrão a aplicação sobe na porta 8080, para acessar o Swagger acesse [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) e o console do FF4J acesse [http://localhost:8080/ff4j-web-console/](http://localhost:8080/ff4j-web-console/).
 #### Executar testes de componente, performance ou segurança
 ```shell
-mvn clean verify -f component-test/pom.xml (Está sendo implementado)
+mvn clean verify -f component-test/pom.xml
 mvn clean verify -f performance-test/pom.xml
 mvn clean verify -f security-test/pom.xml (Está sendo implementado)
 ```
