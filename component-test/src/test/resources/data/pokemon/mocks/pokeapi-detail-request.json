@@ -3,7 +3,7 @@
   "method": "GET",
   "body": {},
   "headers": {
-    "content-type": "application/json"
+    "User-Agent":"Mozilla/5.0"
   },
   "queryParams": {}
 }

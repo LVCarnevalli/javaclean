@@ -1,3 +1,7 @@
 {
-  "another": "one heart"
+  "abilities":["LIMBER"],
+  "baseExperience": 101,
+  "height": 3,
+  "name": "ditto",
+  "weight": 40
 }
