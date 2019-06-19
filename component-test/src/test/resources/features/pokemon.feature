@@ -1,6 +1,24 @@
-@EnableFeatures
+@CleanStubby
 Feature: Default
-  This is default feature with default steps
+  This is feature test API pokemon
 
-  Scenario: Default steps
-    Given I have a request with body request
+  Background:
+    Given A have a mock pokeapi-detail for dependency pokeapi
+    And the feature DETAIL_POKEMON is ENABLE
+
+  Scenario: Detail pokemon with success
+    When I make a GET to api/v1/pokemon/132/ditto
+    Then I expect to receive a 200 status with body response
+
+  Scenario: Search for pokemon that doens't exist
+    When I make a GET to api/v1/pokemon/133/Pikachu
+    Then I expect to receive a 404 status with body responseNotFound
+
+  Scenario: Occurred internal error in application
+    When I make a GET to api/v1/pokemon/psyduck/psyduck
+    Then I expect to receive a 500 status with body responseInternalServerError
+
+  Scenario: Detail pokemon without feature toggle
+    Given the feature DETAIL_POKEMON is DISABLE
+    When I make a GET to api/v1/pokemon/132/ditto
+    Then I expect to receive a 404 status with body responseNotFound

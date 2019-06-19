@@ -19,6 +19,6 @@ services:
     - "8080:8080"
     environment:
     - "SERVER_PORT:8080"
-    - "clients_pokemon_endpoint=http://mocks:9001"
+    - "clients_pokemon_endpoint=http://mocks:9001/pokeapi"
     - "ff4j_redis_server=redis"
     - "ff4j_redis_port=6379"
