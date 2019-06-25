@@ -21,7 +21,7 @@ public class PokemonResponse {
   @ApiModelProperty(value = "Name", example = "ditto")
   private String name;
 
-  @ApiModelProperty(value = "Abilities", example = "[LIMBER]")
+  @ApiModelProperty(value = "Abilities", example = "[\"LIMBER\"]")
   private List<Ability> abilities;
 
   @ApiModelProperty(value = "Base experience", example = "200")
