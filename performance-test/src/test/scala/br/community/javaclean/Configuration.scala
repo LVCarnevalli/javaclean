@@ -8,4 +8,10 @@ object Configuration {
   def getString(name: String): String = {
     return config.getString(name)
   }
+
+  def getInt(name: String): Int = {
+    return config.getInt(name)
+  }
+
+  Database.disableFeatureToggles()
 }
