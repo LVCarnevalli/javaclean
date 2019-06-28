@@ -1,0 +1,32 @@
+version: "3.3"
+services:
+  mocks:
+    build: ../dependencies/stubby/
+    ports:
+    - "9001:9001"
+    - "9002:9002"
+    - "9003:9003"
+  redis:
+    image: redis:5.0.5-alpine
+    ports:
+    - "6379:6379"
+  app:
+    build: ../
+    depends_on:
+    - mocks
+    - redis
+    ports:
+    - "8080:8080"
+    environment:
+    - "SERVER_PORT:8080"
+    - "clients_pokemon_endpoint=http://mocks:9001/pokeapi"
+    - "ff4j_redis_server=redis"
+    - "ff4j_redis_port=6379"
+  owasp:
+    build: ../dependencies/owasp/
+    ports:
+    - "8090:8090"
+    volumes:
+    - ./target/security-session:/tmp/security-session
+    - ./src/test/resources/policy:/tmp/policy
+    command: zap.sh -daemon -host 0.0.0.0 -port 8090 -config api.disablekey=true -config database.recoverylog=false -config connection.timeoutInSecs=120 -config api.addrs.addr.name=.* -config api.addrs.addr.regex=true

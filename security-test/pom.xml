@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>br.community</groupId>
+    <artifactId>javaclean-security-test</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>javaclean-security-test</name>
+    <description>Demo project for Security Test</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+
+        <docker.compose.version>2.4.0</docker.compose.version>
+        <await.maven.plugin.version>1.2</await.maven.plugin.version>
+        <easy.cucumber.version>0.0.3-SNAPSHOT</easy.cucumber.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.github.osvaldjr</groupId>
+            <artifactId>easy-cucumber</artifactId>
+            <version>${easy.cucumber.version}</version>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.github.osvaldjr</groupId>
+                <artifactId>easy-cucumber</artifactId>
+                <version>${easy.cucumber.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>javaclean-security-test</finalName>
+        <plugins>
+            <plugin>
+                <groupId>com.dkanejs.maven.plugins</groupId>
+                <artifactId>docker-compose-maven-plugin</artifactId>
+                <version>${docker.compose.version}</version>
+                <executions>
+                    <execution>
+                        <id>up</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>up</goal>
+                        </goals>
+                        <configuration>
+                            <composeFile>${project.basedir}/docker-compose.yml</composeFile>
+                            <detachedMode>true</detachedMode>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>down</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>down</goal>
+                        </goals>
+                        <configuration>
+                            <composeFile>${project.basedir}/docker-compose.yml</composeFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.github.slem1</groupId>
+                <artifactId>await-maven-plugin</artifactId>
+                <version>${await.maven.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>process-test-classes</phase>
+                        <goals>
+                            <goal>Await</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <poll>
+                        <attempts>10</attempts>
+                        <sleep>5000</sleep>
+                    </poll>
+                    <httpConnections>
+                        <httpConnection>
+                            <url>http://localhost:8080/actuator/health</url>
+                            <statusCode>200</statusCode>
+                        </httpConnection>
+                    </httpConnections>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

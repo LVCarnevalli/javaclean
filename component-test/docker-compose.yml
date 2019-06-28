@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   mocks:
-    build: ../dependencies/mocks/
+    build: ../dependencies/stubby/
     ports:
     - "9001:9001"
     - "9002:9002"
