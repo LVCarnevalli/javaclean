@@ -1,10 +1,9 @@
 JAVA Clean
 ======================
-[![Build Status](https://travis-ci.org/LVCarnevalli/javaclean.svg?branch=master)](https://travis-ci.org/LVCarnevalli/javaclean) [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=br.community:javaclean&metric=alert_status)](https://sonarcloud.io/dashboard?id=br.community:javaclean) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=br.community%3Ajavaclean&metric=coverage)](https://sonarcloud.io/dashboard?id=br.community%3Ajavaclean)
+[![Build Status](https://travis-ci.org/LVCarnevalli/javaclean.svg?branch=master)](https://travis-ci.org/LVCarnevalli/javaclean) [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=br.community:javaclean&metric=alert_status)](https://sonarcloud.io/dashboard?id=br.community:javaclean) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=br.community%3Ajavaclean&metric=coverage)](https://sonarcloud.io/dashboard?id=br.community%3Ajavaclean) <a href="https://github.com/osvaldjr/easy-cucumber"><img  src="https://img.shields.io/badge/use-easycucumber-green.svg"/></a>
+
 
 Estrutura de projeto JAVA abrangendo implementação do clean architecture, features toggles e pirâmide de testes.
-Conheça também os projetos: 
->[Easy Cucumber](https://github.com/osvaldjr/easy-cucumber)
 
 <p align="center">
   <img src="https://github.com/LVCarnevalli/javaclean/blob/master/explanation.jpg?raw=true" width="800 "align="center" />
