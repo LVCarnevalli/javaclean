@@ -77,7 +77,7 @@ mvn clean verify -f security-test/pom.xml (Está sendo implementado)
 ```
 Os testes são executados através do docker-compose, enquanto os testes estão rodando o docker é iniciado e ao término da execução o docker é desligado.
 
-**Reports**:
+**Reports**
 - Component test: target/cucumber-html-reports/overview-features.html
 - Performance test: target/gatling/pokemonsimulation-*/index.html
 - Security test: target/security-reports/*-scan-report.html
