@@ -12,13 +12,13 @@ Conheça também os projetos:
 
 ## Conteúdo
 
-- [Referência](https://github.com/LVCarnevalli/javaclean/blob/master/README.md#refer%C3%AAncia)
-- [Tecnologias](https://github.com/LVCarnevalli/javaclean/blob/master/README.md#tecnologias)
-- [Pré-requisitos](https://github.com/LVCarnevalli/javaclean/blob/master/README.md#pr%C3%A9-requisitos)
-- [Como utilizar](https://github.com/LVCarnevalli/javaclean/blob/master/README.md#como-utilizar)
-- [Atenção](https://github.com/LVCarnevalli/javaclean/blob/master/README.md#aten%C3%A7%C3%A3o)
-- [Créditos](https://github.com/LVCarnevalli/javaclean/blob/master/README.md#cr%C3%A9ditos)
-- [Licença](https://github.com/LVCarnevalli/javaclean/blob/master/README.md#licen%C3%A7a)
+- [Referência](https://github.com/LVCarnevalli/javaclean#refer%C3%AAncia)
+- [Tecnologias](https://github.com/LVCarnevalli/javaclean#tecnologias)
+- [Pré-requisitos](https://github.com/LVCarnevalli/javaclean#pr%C3%A9-requisitos)
+- [Como utilizar](https://github.com/LVCarnevalli/javaclean#como-utilizar)
+- [Atenção](https://github.com/LVCarnevalli/javaclean#aten%C3%A7%C3%A3o)
+- [Créditos](https://github.com/LVCarnevalli/javaclean#cr%C3%A9ditos)
+- [Licença](https://github.com/LVCarnevalli/javaclean#licen%C3%A7a)
 
 ## Referência
 
@@ -66,7 +66,9 @@ Os testes de E2E não se aplica a esse projeto, mais pra frente pretendemos colo
 mvn clean verify -f app/pom.xml
 mvn spring-boot:run -f app/pom.xml
 ```
-Por padrão a aplicação sobe na porta 8080, para acessar o Swagger acesse [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) e o console do FF4J acesse [http://localhost:8080/ff4j-web-console/](http://localhost:8080/ff4j-web-console/).
+Por padrão a aplicação sobe na porta 8080.<br>
+Swagger: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) 
+Console FF4J: [http://localhost:8080/ff4j-web-console/](http://localhost:8080/ff4j-web-console/)
 #### Executar testes de componente, performance ou segurança
 ```shell
 mvn clean verify -f component-test/pom.xml
@@ -74,6 +76,11 @@ mvn clean verify -f performance-test/pom.xml
 mvn clean verify -f security-test/pom.xml (Está sendo implementado)
 ```
 Os testes são executados através do docker-compose, enquanto os testes estão rodando o docker é iniciado e ao término da execução o docker é desligado.
+
+**Reports**:
+- Component test: target/cucumber-html-reports/overview-features.html
+- Performance test: target/gatling/pokemonsimulation-*/index.html
+- Security test: target/security-reports/*-scan-report.html
 
 ## Atenção
 - Ao alterar a versão do docker compose é necessário verificar se o plugin utilizado no pom.xml suporta.
