@@ -1,13 +1,13 @@
 package br.community.javaclean.simulations
 
 import br.community.javaclean.scenarios.Pokemon
-import br.community.javaclean.{Database, JavaCleanSimulation, Protocol}
+import br.community.javaclean.{FeatureToggle, JavaCleanSimulation, Protocol}
 import io.gatling.core.Predef.{constantUsersPerSec, _}
 
 class PokemonSimulation extends JavaCleanSimulation {
 
   before {
-    Database.enableFeatureToggles()
+    FeatureToggle.enableAllFeatureToggles()
   }
 
   setUp(

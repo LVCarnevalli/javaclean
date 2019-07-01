@@ -13,5 +13,5 @@ object Configuration {
     return config.getInt(name)
   }
 
-  Database.disableFeatureToggles()
+  FeatureToggle.disableAllFeatureToggles()
 }

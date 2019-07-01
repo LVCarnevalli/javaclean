@@ -2,7 +2,7 @@ package br.community.javaclean
 
 import com.redis.RedisClient
 
-object Database {
+object FeatureToggle {
 
   val featureToggles = List(
     "detail-pokemon"
@@ -13,15 +13,15 @@ object Database {
     client.set(s"FF4J_FEATURE_$ft", featureToggleDescriptor)
   }
 
-  def disableFeatureToggles() = {
-    val client = new RedisClient(Configuration.getString("application.url-redis"), Configuration.getInt("application.port"))
+  def disableAllFeatureToggles() = {
+    val client = new RedisClient(Configuration.getString("application.url-redis"), Configuration.getInt("application.port-redis"))
     featureToggles.foreach { ft =>
       toggleFeature(client, ft, enable = false)
     }
   }
 
-  def enableFeatureToggles() = {
-    val client = new RedisClient(Configuration.getString("application.url-redis"), Configuration.getInt("application.port"))
+  def enableAllFeatureToggles() = {
+    val client = new RedisClient(Configuration.getString("application.url-redis"), Configuration.getInt("application.port-redis"))
     featureToggles.foreach { ft =>
       toggleFeature(client, ft, enable = true)
     }
