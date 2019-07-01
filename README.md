@@ -66,7 +66,7 @@ Os testes de E2E não se aplica a esse projeto, mais pra frente pretendemos colo
 mvn clean verify -f app/pom.xml
 mvn spring-boot:run -f app/pom.xml
 ```
-Por padrão a aplicação sobe na porta 8080.<br>
+Por padrão a aplicação sobe na porta 8080.<br><br>
 Swagger: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) <br>
 Console FF4J: [http://localhost:8080/ff4j-web-console/](http://localhost:8080/ff4j-web-console/)
 #### Executar testes de componente, performance ou segurança
