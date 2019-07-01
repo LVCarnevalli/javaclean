@@ -1,10 +1,14 @@
 package br.community.javaclean.simulations
 
 import br.community.javaclean.scenarios.Pokemon
-import br.community.javaclean.{JavaCleanSimulation, Protocol}
-import io.gatling.core.Predef._
+import br.community.javaclean.{Database, JavaCleanSimulation, Protocol}
+import io.gatling.core.Predef.{constantUsersPerSec, _}
 
 class PokemonSimulation extends JavaCleanSimulation {
+
+  before {
+    Database.enableFeatureToggles()
+  }
 
   setUp(
     Pokemon.detailPokemon.inject(
