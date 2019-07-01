@@ -50,7 +50,7 @@ Os testes de E2E não se aplica a esse projeto, mais pra frente pretendemos colo
 - [JUnit 5](https://junit.org/junit5/), [Factory Fixture](https://github.com/six2six/fixture-factory), [Hamcrest](http://hamcrest.org/JavaHamcrest/tutorial), [Easy Random](https://github.com/j-easy/easy-random) e [Mockito](https://site.mockito.org/) (Testes unitários)
 - [Spock](http://spockframework.org/) (Testes unitários de regra de negócio)
 - [Gatling](https://gatling.io/) (Testes de performance)
-- [Cucumber](https://cucumber.io/) (Testes de componente)
+- [Cucumber](https://cucumber.io/), [Easy Cucumber](https://github.com/osvaldjr/easy-cucumber) (Testes de componente)
 - [OWASP Zap](https://github.com/zaproxy/zaproxy) (Testes de segurança)
 
 ## Pré-requisitos
