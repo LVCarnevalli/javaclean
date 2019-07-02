@@ -79,7 +79,7 @@ Os testes são executados através do docker-compose, enquanto os testes estão 
 **Reports**
 - Component test: target/cucumber-html-reports/overview-features.html
 - Performance test: target/gatling/pokemonsimulation-*/index.html
-- Security test: target/security-reports/*-scan-report.html
+- Security test: target/security-reports/*.html
 
 ## Atenção
 - Ao alterar a versão do docker compose é necessário verificar se o plugin utilizado no pom.xml suporta.
