@@ -7,5 +7,6 @@ install:
 script: 	
   - mvn clean verify -B -f performance-test/pom.xml
   - mvn clean verify -B -f component-test/pom.xml
+  - mvn clean verify -B -f security-test/pom.xml
 after_success:
   - mvn sonar:sonar -B -f app/pom.xml
