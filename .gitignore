@@ -10,6 +10,7 @@
 
 # IntelliJ files
 *.iml
+.idea/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
