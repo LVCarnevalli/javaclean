@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
-    <policy>easycucumber</policy>
+    <policy>javaclean</policy>
     <scanner>
         <level>MEDIUM</level>
         <strength>MEDIUM</strength>

@@ -72,7 +72,7 @@ Console FF4J: [http://localhost:8080/ff4j-web-console/](http://localhost:8080/ff
 ```shell
 mvn clean verify -f component-test/pom.xml
 mvn clean verify -f performance-test/pom.xml
-mvn clean verify -f security-test/pom.xml (Está sendo implementado)
+mvn clean verify -f security-test/pom.xml
 ```
 Os testes são executados através do docker-compose, enquanto os testes estão rodando o docker é iniciado e ao término da execução o docker é desligado.
 
