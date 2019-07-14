@@ -9,4 +9,5 @@ dependencies:
     port: 6379
 
 features:
-  DETAIL_POKEMON: detail-pokemon
+  names:
+  - detail-pokemon

@@ -16,7 +16,7 @@
 
         <docker.compose.version>2.4.0</docker.compose.version>
         <await.maven.plugin.version>1.2</await.maven.plugin.version>
-        <easy.cucumber.version>0.0.3</easy.cucumber.version>
+        <easy.cucumber.version>0.0.6</easy.cucumber.version>
     </properties>
 
     <dependencies>
