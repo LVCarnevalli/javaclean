@@ -9,6 +9,7 @@ Feature: Default
   Scenario: Detail pokemon with success
     When I make a GET to api/v1/pokemon/132/ditto
     Then I expect to receive a 200 status with body response.json
+    And I expect mock pokeapi-detail for dependency pokeapi to have been called 1 times
 
   Scenario: Search for pokemon that doens't exist
     When I make a GET to api/v1/pokemon/133/Pikachu
