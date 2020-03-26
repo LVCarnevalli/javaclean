@@ -3,7 +3,7 @@ Feature: Default
   This is feature test API pokemon
 
   Background:
-    Given A have a mock pokeapi-detail for dependency pokeapi
+    Given I have a mock pokeapi-detail for dependency pokeapi
 
   Scenario: Detail pokemon with success
     When I make a GET to api/v1/pokemon/132/ditto

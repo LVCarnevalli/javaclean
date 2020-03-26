@@ -2,7 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.5.RELEASE</version>
+        <relativePath/>
+    </parent>
     <groupId>br.community</groupId>
     <artifactId>javaclean-component-test</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -21,8 +26,13 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>io.github.osvaldjr</groupId>
-            <artifactId>easy-cucumber-core</artifactId>
+            <artifactId>easy-cucumber-mock</artifactId>
             <version>${easy.cucumber.version}</version>
             <scope>test</scope>
         </dependency>

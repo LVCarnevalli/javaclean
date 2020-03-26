@@ -10,7 +10,7 @@ import io.github.osvaldjr.core.EasyCucumberRunner;
 @CucumberOptions(
     plugin = {"pretty"},
     features = {"src/test/resources/features"},
-    glue = {EasyCucumberRunner.GLUE_EASY_CUCUMBER},
+    glue = {EasyCucumberRunner.GLUE_EASY_CUCUMBER, "br.community.javaclean.steps"},
     tags = {"not @Ignore"},
     strict = true)
 public class RunCucumberTest extends EasyCucumberRunner {}
