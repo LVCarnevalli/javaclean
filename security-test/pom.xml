@@ -16,28 +16,17 @@
 
         <docker.compose.version>2.4.0</docker.compose.version>
         <await.maven.plugin.version>1.2</await.maven.plugin.version>
-        <easy.cucumber.version>0.0.4</easy.cucumber.version>
+        <easy.cucumber.version>1.0.0-SNAPSHOT</easy.cucumber.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>io.github.osvaldjr</groupId>
-            <artifactId>easy-cucumber</artifactId>
+            <artifactId>easy-cucumber-owasp-zap</artifactId>
             <version>${easy.cucumber.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>io.github.osvaldjr</groupId>
-                <artifactId>easy-cucumber</artifactId>
-                <version>${easy.cucumber.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <build>
         <finalName>javaclean-security-test</finalName>
@@ -97,4 +86,11 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </repository>
+    </repositories>
 </project>

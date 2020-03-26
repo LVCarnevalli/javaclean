@@ -1,17 +1,16 @@
 package br.community.javaclean;
 
-import static io.github.osvaldjr.EasyCucumberRunner.GLUE_EASY_CUCUMBER;
-
 import org.junit.runner.RunWith;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
-import io.github.osvaldjr.EasyCucumberRunner;
+import io.github.osvaldjr.core.EasyCucumberRunner;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-    plugin = {"pretty", "json:target/jsonReports/cucumber.json"},
+    plugin = {"pretty"},
     features = {"src/test/resources/features"},
-    glue = {GLUE_EASY_CUCUMBER},
+    glue = {EasyCucumberRunner.GLUE_EASY_CUCUMBER},
+    tags = {"not @Ignore"},
     strict = true)
 public class RunCucumberTest extends EasyCucumberRunner {}

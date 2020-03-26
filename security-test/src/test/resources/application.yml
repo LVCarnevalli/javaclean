@@ -1,9 +1,6 @@
-target:
-  url: http://app:8080
-
-dependencies:
-  owasp:
-    overwriteDataFolder: /tmp/
-
-features:
-  DETAIL_POKEMON: detail-pokemon
+easycucumber:
+  target:
+    url: http://app:8080
+  dependencies:
+    owasp:
+      overwriteDataFolder: /tmp/
